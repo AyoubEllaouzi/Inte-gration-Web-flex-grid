@@ -1,0 +1,246 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr ;
+    grid-template-areas:
+      "nav nav "
+      "sidebar main"
+      "content1 main"
+      "cont cont"
+      "footer footer";
+    grid-gap: 0.2rem;
+    font-weight: 800;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+  }
+
+  /*******************Search********************************************/
+
+  .search {
+    grid-area: search;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column  ;
+    justify-content: space-between;
+
+  }
+  
+
+   .country-select select{
+    width: 50%;
+    height: 40px;
+    border-radius:20px;
+    background-color: white;
+  }
+
+
+  .serach-input {
+    padding-top: 15px;
+    display: inline-block;
+    
+  }
+
+  .serach-input #position_icon {
+    font-size:  20px;
+    height: 25px;
+    position:absolute;
+    padding: 10px;
+  }
+
+  .serach-input input{
+    width: 45%;
+    margin-right: -5px;
+    padding-left: 40px;
+    height: 40px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: white;
+    
+    
+  }
+
+  .serach-input button{
+    background-color: black;
+    color: white;
+    width: 30%;
+    height: 45px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+
+  /****************************Nav************************************/
+
+  
+  nav {
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    height: 50px;
+  }
+  nav img {
+    display: flex;
+    margin-left: 2%;
+    height: 70%;
+  }
+  
+
+/*******************Search********************************************/
+
+  main {
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+  main img {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .information1 {
+    display: flex;
+    width: 90%;
+    text-align: left;
+
+  }
+
+  .information2 {
+    display: flex;
+    width: 90%;
+    text-align: left;
+  }
+  span img{
+    width: 8%;
+    height: 8%;
+    margin-right: 5%;
+  }
+  #sidebar {
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+
+ 
+  #content1 {
+    overflow-y: scroll; /* Add vertical scrollbar */
+    max-height: 300px;
+    height: 100%;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+  
+
+/*******************countries********************************************/
+
+.cont {
+    grid-area: cont;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+  }
+
+  .cont h1{
+   display: flex;
+   margin-left: 1%;
+  }
+.countries {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px;
+}
+
+.left {
+    float: left;
+    text-align: left;
+}
+
+.center {
+    display: inline-block;
+}
+
+.right {
+    float: right;
+    text-align: right;
+    margin-right: 10%;
+}
+
+.footer-phone {
+    display: none;
+}
+/*footer*/
+/*******************footer********************************************/
+
+
+.footer-web {
+    display: flex;
+    background: black;
+    color: white;
+    text-align: center;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-align: center;
+
+  }
+
+footer p{
+ margin-left: 5%;
+  }
+
+  /*phone*/
+  @media only screen and (max-width: 550px) {
+    .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.4fr 0.4fr;
+      grid-template-areas:
+        "nav"
+        "sidebar"
+        "main"
+        "content1"
+        "footer";
+    }
+  
+ 
+
+    nav img {
+        margin-left: 2%;
+        height: 80%;
+      }
+
+      .cont{
+        display: none;
+      }
+   
+    
+    
+     .footer-web {
+        display: none;
+     }
+     .footer-phone {
+        display: inline;
+        background: black;
+        color: white;
+        text-align: center;
+    }
+    #content1 {
+        overflow-y:unset; 
+        max-height: 800px;
+        height: 400px;
+      }
+      
+
+  }
+  
